@@ -15,7 +15,9 @@ public class Ball : MonoBehaviour
 
 	public TextMeshProUGUI textCoins;
 	public TextMeshProUGUI textScoreCounts;
+	
 	public Text highScoreText;
+	public Text highCoinText;
 	
 
 
@@ -32,6 +34,7 @@ public class Ball : MonoBehaviour
 	public GameObject wall;
 	//public GameObject wall_right;
 	public int hiScoreCount;
+	public int hiCoinCount;
 
 
 
@@ -53,8 +56,13 @@ public class Ball : MonoBehaviour
 			hiScoreCount = PlayerPrefs.GetInt("HighScore");
 			//PlayerPrefs.GetFloat("HighScore", hiScoreCount);
 		}
-		
-		
+		if (PlayerPrefs.GetInt("HighCoin", 0) != null)
+		{
+
+			hiCoinCount = PlayerPrefs.GetInt("HighCoin");
+		}
+
+
 		//
 		//Camera = GameObject.Find("Camera").GetComponent<Camera>();
 
@@ -88,6 +96,15 @@ public class Ball : MonoBehaviour
 		{
 			Coin++;
 			textCoins.text = Coin.ToString();
+
+			if (Coin > hiCoinCount)
+			{
+				hiCoinCount = Coin;
+				PlayerPrefs.SetInt("HighCoin", hiCoinCount);
+			}
+			highCoinText.text = "High Coin:" + hiCoinCount;
+
+
 			Destroy(other.gameObject);
 
 		}

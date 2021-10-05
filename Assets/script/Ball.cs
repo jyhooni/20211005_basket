@@ -13,8 +13,8 @@ public class Ball : MonoBehaviour
 	public int ScoreCount = 0;
 	
 
-	public TextMeshProUGUI textCoins;
-	public TextMeshProUGUI textScoreCounts;
+	public Text textCoins;
+	public Text textScoreCounts;
 	
 	public Text highScoreText;
 	public Text highCoinText;
@@ -95,7 +95,7 @@ public class Ball : MonoBehaviour
 		if (other.transform.tag == "coin")
 		{
 			Coin++;
-			textCoins.text = Coin.ToString();
+			textCoins.text = "Coin :" + Coin.ToString();
 
 			if (Coin > hiCoinCount)
 			{
@@ -115,7 +115,7 @@ public class Ball : MonoBehaviour
 			//ScoreCount++;
 			ScoreCount += 2;
 			
-			textScoreCounts.text = ScoreCount.ToString();
+			textScoreCounts.text = "Score : " + ScoreCount.ToString();
 			
 			if(ScoreCount > hiScoreCount)
             {

@@ -10,4 +10,22 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
+    public void Retry()
+    {
+        SceneManager.LoadScene("Game");
+
+    }
+    public void Mainmenu()
+    {
+        SceneManager.LoadScene("Menu");
+
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("QUIT!");
+        Application.Quit();
+    }
+
+    //option 매뉴 이동은 코드없이 이동이 가능하다. 
 }

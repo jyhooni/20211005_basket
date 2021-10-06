@@ -69,18 +69,20 @@ public class Ball : MonoBehaviour
 
 	}
 
-	
-    // OnTriggerEnter2D는 충돌이 일어날때 한번만 호출되는 함수
 
-    
-	
+	// OnTriggerEnter2D는 충돌이 일어날때 한번만 호출되는 함수
+
+
+	public float speed = 5f;
 
 	
 
 	void Update()
     {
 
-		
+		float xMove = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
+		float yMove = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
+		this.transform.Translate(new Vector3(xMove, yMove, 0));
 
 	}
 

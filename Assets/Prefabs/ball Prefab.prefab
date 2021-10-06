@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: be5bd547f6ebb7f4a882ba6695f71f64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,9 +100,12 @@ MonoBehaviour:
   textCoins: {fileID: 0}
   textScoreCounts: {fileID: 0}
   highScoreText: {fileID: 0}
+  highCoinText: {fileID: 0}
   rb: {fileID: 0}
   col: {fileID: 0}
   GameOver: {fileID: 0}
   Pannel: {fileID: 0}
   wall: {fileID: 0}
   hiScoreCount: 0
+  hiCoinCount: 0
+  speed: 10

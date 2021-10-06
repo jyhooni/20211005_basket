@@ -69,11 +69,14 @@ public class GameManager : MonoBehaviour
 	//---------------------------------------
 	void Start()
 	{
+
+		Debug.Log("startfunction");
 		cam = Camera.main;
 		ball.DesactivateRb();
 
-		InvokeRepeating("floating", 0.0f, 2.5f);
+		InvokeRepeating("floating", 0, 2.5f);
 
+		initGame();
 		//highscore = PlayerPrefs.GetInt("highscore", 0);
 		//highscoreText.text = "HighScore:" + highscore.ToString(); 
 
@@ -86,17 +89,20 @@ public class GameManager : MonoBehaviour
 		
 	}
 
+	void initGame()
+    {
+		Time.timeScale = 1.0f;
+    }
+	
+
 
 	public void floating()
     {
 		GameObject newHoop = Instantiate(hoop);
 		//Instantiate(hoop);
     }
-
-
 	
 	
-
 		void Update()
 	{
 		
